@@ -35,6 +35,9 @@ client.on('messageCreate', async message => {
   if (messageChat.includes('Sego')) {
     message.channel.send('Terrible puto');
   }
+  if (messageChat.includes('Nashe')) {
+    message.channel.send('Asheeee');
+  }
 
 });
 
