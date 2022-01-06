@@ -7,29 +7,38 @@ const token = process.env.TOKEN_BOT;
 
 client.login(token)
 const Channel = client.channels.cache
-const GENERAL_CHANNEL = '389615342357315589'
+const GENERAL_CHANNEL = '928671591989137499'
 
 client.on("ready", () => {
   console.log('Bot is ready!');
-  // Channel.get(GENERAL_CHANNEL).send(`YA ESTA`);
 })
 
 client.on('messageCreate', async message => {
-  if (client.isReady()) {
+  const PREFIX = 'cane'
+  const messageChat = message.content.toLowerCase();
+
+  if (messageChat.includes(`${PREFIX} la hora`)) {
+    message.channel.send('Que te pensas que soy tu esclavo?');
+    setTimeout(() => {
+    message.channel.send(`Bueno si`);
+    message.channel.send(`Son las ${new Date().toLocaleTimeString()}`);
+    }, 4000)
   }
-  if (message.content.startsWith('que onda')) {
-    message.channel.send(`Que ondaa ${message.author.username}!`);
+
+  if (messageChat.includes(`${PREFIX} que onda`)) {
+    message.channel.send(`Que ondaa con que salame`);
+   setTimeout(()=>{
+      message.channel.send(`Na todo piola ${message.author.username}!`);
+  }, 2000)
   }
-  if (message.content.startsWith('Nashee')) {
-    message.channel.send('Asheeeee');
-  }
-  if (message.content.startsWith('Sego')) {
+
+  if (messageChat.includes('Sego')) {
     message.channel.send('Terrible puto');
   }
+
 });
 
 client.on("guildMemberAdd", member => {
-  console.log(member.guild.im);
   // inside a command, event listener, etc.
   const exampleEmbed = new MessageEmbed()
     .setColor('#d400ff')
@@ -44,4 +53,3 @@ client.on("guildMemberAdd", member => {
 
   Channel.get(GENERAL_CHANNEL).send({ embeds: [exampleEmbed] });
 });
-
