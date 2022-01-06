@@ -32,12 +32,17 @@ client.on('messageCreate', async message => {
   }, 2000)
   }
 
-  if (messageChat.includes('sego')) {
+  if (messageChat.includes('Sego')) {
     message.channel.send('Terrible puto');
   }
-  if (messageChat.includes('nashe')) {
+  if (messageChat.includes('Nashe')) {
     message.channel.send('Asheeee');
   }
+
+  if (messageChat.includes(`${PREFIX} a viciar`)) {
+    message.channel.send('A VICIARRRRRR PERRRRROS @Fiora');
+  }
+
 
 });
 
