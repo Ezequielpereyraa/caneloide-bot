@@ -31,12 +31,20 @@ client.on('messageCreate', async message => {
       message.channel.send(`Na todo piola ${message.author.username}!`);
   }, 2000)
   }
+  if (messageChat.includes(`${PREFIX} dale`)) {
+   setTimeout(()=>{
+      message.channel.send(`CALAAA BOCAAA ${message.author.username}!`);
+  }, 2000)
+  }
 
-  if (messageChat.includes('Sego')) {
+  if (messageChat.includes('sego')) {
     message.channel.send('Terrible puto');
   }
-  if (messageChat.includes('Nashe')) {
+  if (messageChat.includes('nashe')) {
     message.channel.send('Asheeee');
+  }
+  if (messageChat.includes('gordo')) {
+    message.channel.send('Alta putarraca esa');
   }
 
   if (messageChat.includes(`${PREFIX} a viciar`)) {
