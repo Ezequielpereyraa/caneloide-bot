@@ -43,6 +43,9 @@ client.on('messageCreate', async message => {
     message.channel.send('A VICIARRRRRR PERRRRROS @Fiora');
   }
 
+  if (messageChat.includes(`Gordo`)) {
+    message.channel.send('Terrible Putarraco este gordo');
+  }
 
 });
 
