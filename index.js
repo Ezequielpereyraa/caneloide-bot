@@ -62,6 +62,8 @@ client.on('messageCreate', async message => {
     // const nickname = memberNicknameMention(id);
     // const channel = channelMention(id);
     // const role = roleMention(id);
+    console.log(user)
+    if (user === '<@undefined>') return message.channel.send(`JAAPISHH pa vo! por no etiquetar a nadie!!`);
     message.channel.send(`JAAPISHH ${user} por puto!`);
   }
   if (messageChat.includes(`${PREFIX} ez`)) {
@@ -96,7 +98,7 @@ client.on("guildMemberAdd", member => {
     .setColor('#d400ff')
     .setTitle(`Bienvenid@ a la comunidad de ${member.guild.name}`)
      .setURL('https://discord.gg/7ZhwTxNYMK')
-    .setAuthor({ name: member.user.username, iconURL: member.user.avatarURL() , url: 'https://discord.gg/7ZhwTxNYMK' })
+    .setAuthor({ name: member.user.username, iconURL: member.user.avatarURL() })
     .setThumbnail(member.guild.iconURL())
     .setDescription(`
     - Respetar a los demás users  - No ser ortiva
