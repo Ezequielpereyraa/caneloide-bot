@@ -26,7 +26,7 @@ client.on('messageCreate', async message => {
     message.channel.send('Que te pensas que soy tu esclavo?');
     setTimeout(() => {
     message.channel.send(`Bueno si`);
-    message.channel.send(`Son las ${new Date().toLocaleTimeString()}`);
+    message.channel.send(`Son las ${new Date().toLocaleTimeString('es-ES', {timeZone: 'America/Argentina/Buenos_Aires'})}`);
     }, 4000)
   }
 
