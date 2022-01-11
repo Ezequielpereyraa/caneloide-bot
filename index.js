@@ -1,16 +1,21 @@
 import { config } from "dotenv";
 config();
 import { Client, MessageEmbed } from "discord.js";
+import { SlashCommandBuilder, userMention, memberNicknameMention, channelMention, roleMention } from "@discordjs/builders"
+import { REST } from "@discordjs/rest";
+import { Routes } from "discord-api-types/v9";
 
 const client = new Client({ intents: 32767 });
 const token = process.env.TOKEN_BOT;
 
 client.login(token)
 const Channel = client.channels.cache
-const GENERAL_CHANNEL = '928671591989137499'
+const GENERAL_CHANNEL = '389615342357315589'
+const serverId = '389090009497600000'
+const clientId = '386228748300845059'
 
 client.on("ready", () => {
-  console.log('Bot is ready!');
+  console.log('Caneloide ready!');
 })
 
 client.on('messageCreate', async message => {
@@ -48,11 +53,16 @@ client.on('messageCreate', async message => {
   }
 
   if (messageChat.includes(`${PREFIX} a viciar`)) {
-    message.channel.send('A VICIARRRRRR PERRRRROS @Fiora');
+    message.channel.send(`A VICIARRRRRR PERRRRROS`);
   }
+  if (messageChat.includes(`${PREFIX} pegale`)) {
+    const id = getUserFromMention(message.content);
 
-  if (messageChat.includes(`Gordo`)) {
-    message.channel.send('Terrible Putarraco este gordo');
+    const user = userMention(id);
+    // const nickname = memberNicknameMention(id);
+    // const channel = channelMention(id);
+    // const role = roleMention(id);
+    message.channel.send(`JAAPISHH ${user} por puto!`);
   }
 
 });
@@ -69,6 +79,12 @@ client.on("guildMemberAdd", member => {
     - Respetar a los demás users  - No ser ortiva
      - En lo posible viciar como un hdp - Nashe
      - Sego? Un puto`)
-
   Channel.get(GENERAL_CHANNEL).send({ embeds: [exampleEmbed] });
 });
+
+const getUserFromMention = mention => {
+	if (!mention.includes('<')) return;
+  const mencion = mention.split('<@', 2)
+  const idUser= mencion[1].replace('!', '').replace('>', '');
+  return idUser;
+}
