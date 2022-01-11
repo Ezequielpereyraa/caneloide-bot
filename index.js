@@ -64,6 +64,29 @@ client.on('messageCreate', async message => {
     // const role = roleMention(id);
     message.channel.send(`JAAPISHH ${user} por puto!`);
   }
+  if (messageChat.includes(`${PREFIX} ez`)) {
+    message.channel.send(`
+    ━━━-╮
+╰┃ ┣▇━▇
+ ┃ ┃  ╰━▅╮ 
+ ╰┳╯ ╰━━┳╯F A S I L I T O
+  ╰╮ ┳━━╯ EL
+ ▕▔▋ ╰╮╭━╮ T U T O R I A L
+╱▔╲▋╰━┻┻╮╲╱▔▔▔╲
+▏  ▔▔▔▔▔▔▔  O O┃ 
+╲╱▔╲▂▂▂▂╱▔╲▂▂▂╱
+ ▏╳▕▇▇▕ ▏╳▕▇▇▕
+    `);
+  }
+  if (messageChat.includes(`${PREFIX} gg`)) {
+    message.channel.send(`
+    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░█▀▀▀░█▀▀▀░░█▀▀░▀▀█░░█░░░░
+░░░░█░▀█░█░▀█░░█▀▀░▄▀░░░▀░░░░
+░░░░▀▀▀▀░▀▀▀▀░░▀▀▀░▀▀▀░░▀░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    `);
+  }
 
 });
 
